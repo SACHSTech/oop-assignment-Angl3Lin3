@@ -20,4 +20,8 @@ public class Player {
         return true;
     }
 
+    public boolean getPlayerDead(){
+        return isPlayerDead;
+    }
+
 }
