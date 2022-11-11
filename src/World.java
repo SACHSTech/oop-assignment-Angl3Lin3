@@ -7,5 +7,9 @@ public class World {
         return intEntityNum;
     }
 
+    public int getItemNum(){
+        return intItemNum;
+    }
+
 
 }
