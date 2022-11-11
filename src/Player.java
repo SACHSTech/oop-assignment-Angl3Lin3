@@ -24,4 +24,8 @@ public class Player {
         return isPlayerDead;
     }
 
+    public void playerName(String playerName){
+        strPlayerName = playerName;
+    }
+
 }
