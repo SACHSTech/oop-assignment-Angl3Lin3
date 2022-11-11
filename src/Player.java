@@ -12,4 +12,8 @@ public class Player {
         intPlayerHealth = intPlayerHealth - damage;
     }
 
+    public String getPlayerName(){
+        return strPlayerName;
+    }
+
 }
