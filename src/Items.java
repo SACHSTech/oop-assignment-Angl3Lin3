@@ -7,4 +7,8 @@ public class Items {
         return strItemName;
     }
 
+    public boolean getUse(){
+        return canUse;
+    }
+
 }
