@@ -8,4 +8,8 @@ public class Player {
         return intPlayerHealth;
     }
 
+    public void setPlayerHealth(int damage){
+        intPlayerHealth = intPlayerHealth - damage;
+    }
+
 }
