@@ -17,6 +17,16 @@ public class Main {
         addLine();
         System.out.println(start);
 
+        for(int i = 0; i < intItemNum; i++){
+            System.out.print("Enter item name: ");
+            String itemName = scan.next();
+            System.out.print("Enter true: if you can use the item, false: if you can not.");
+            boolean itemUse = scan.nextBoolean();
+            addLine();
+
+            Items create = new Items(itemName, itemUse);
+        }
+
         scan.close();
 
         addLine();

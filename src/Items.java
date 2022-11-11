@@ -16,4 +16,8 @@ public class Items {
         canUse = use;
     }
 
+    public String toString(){
+        return "You have created " + strItemName + " and usage: " + canUse;
+    }
+
 }
