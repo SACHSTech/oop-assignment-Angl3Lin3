@@ -11,4 +11,9 @@ public class Items {
         return canUse;
     }
 
+    public Items(String itemName, boolean use){
+        strItemName = itemName;
+        canUse = use;
+    }
+
 }
