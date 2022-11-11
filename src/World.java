@@ -17,7 +17,7 @@ public class World {
     }
 
     public String toString(){
-        return "There are " + intEntityNum + "entities and " + intItemNum + "items";
+        return "There are " + intEntityNum + " entities and " + intItemNum + " items";
     }
 
 }
