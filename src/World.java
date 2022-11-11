@@ -11,5 +11,10 @@ public class World {
         return intItemNum;
     }
 
+    public World(int entityNum, int itemNum){
+        intEntityNum = entityNum;
+        intItemNum = itemNum;
+    }
+
 
 }
