@@ -4,4 +4,8 @@ public class Player {
     String strPlayerName;
     boolean isPlayerDead = false;
 
+    public int getPlayerHealth(){
+        return intPlayerHealth;
+    }
+
 }
