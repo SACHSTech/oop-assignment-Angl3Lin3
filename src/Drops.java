@@ -12,4 +12,8 @@ public class Drops {
         return strDropType;
     }
 
+    public int getDropNum(){
+        return intDropNum;
+    }
+
 }
