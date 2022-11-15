@@ -16,4 +16,8 @@ public class Drops {
         return intDropNum;
     }
 
+    public String toString(){
+        return "You've got " + intDropNum + " of " + strDropName + strDropType;
+    }
+
 }
