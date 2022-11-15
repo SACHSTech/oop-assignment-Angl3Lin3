@@ -6,4 +6,8 @@ public class Passive {
         return isAttacked;
     }
 
+    public String toString(){
+        return "Ahh you hit me :(";
+    }
+
 }
