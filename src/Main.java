@@ -8,6 +8,12 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
 
+        System.out.print("Enter player name: ");
+        String playerName = scan.nextLine();
+        Player mainPlayer = new Player(playerName);
+
+        addLine();
+
         System.out.print("Enter number of entities: ");
         int intEntityNum = scan.nextInt();
         System.out.print("Enter number of items: ");
@@ -18,6 +24,13 @@ public class Main {
         addLine();
         System.out.println(start);
         addLine();
+
+        for(int i = 0; i < intEntityNum; i++){
+            System.out.print("Enter entity name: ");
+            String entityName = scan.next();
+            System.out.print("Enter entity noise: ");
+            String entityNoise = scan.next();
+        }
 
         HashMap<String, Boolean> itemInfo = new HashMap<String, Boolean>();
 
@@ -32,6 +45,10 @@ public class Main {
             System.out.println(create);
             itemInfo.put(itemName, itemUse);
             addLine();
+        }
+
+        for(int i = 0; i < intEntityNum; i++){
+
         }
 
         scan.close();
