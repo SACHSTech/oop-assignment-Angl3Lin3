@@ -30,6 +30,10 @@ public class Entity {
         intEntityHealth = intEntityHealth - damage;
     }
 
+    public void setEntityDead(){
+        isEntityDead = true;
+    }
+
 
 
 }

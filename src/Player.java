@@ -16,8 +16,8 @@ public class Player {
         return strPlayerName;
     }
 
-    public boolean setPlayerDead(){
-        return true;
+    public void setPlayerDead(){
+        isPlayerDead = true;
     }
 
     public boolean getPlayerDead(){
