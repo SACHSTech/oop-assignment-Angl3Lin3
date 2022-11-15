@@ -10,6 +10,10 @@ public class Entity {
         return intHealth;
     }
 
+    public String getEntityName(){
+        return strName;
+    }
+
 
 
 }
