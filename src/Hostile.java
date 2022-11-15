@@ -1,8 +1,10 @@
 public class Hostile extends Entity{
     
-    public int intDetectionRange = 5;
+    private int intDetectionRange = 5;
     int intWalkSpeed = 10;
 
-    
+    public int getDetectionRange(){
+        return intDetectionRange;
+    }
 
 }
