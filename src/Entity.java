@@ -22,6 +22,10 @@ public class Entity {
         return isEntityDead;
     }
 
+    public String getNoise(){
+        return strNoise;
+    }
+
 
 
 }
