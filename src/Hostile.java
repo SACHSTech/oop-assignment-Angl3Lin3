@@ -7,4 +7,8 @@ public class Hostile extends Entity{
         return intDetectionRange;
     }
 
+    public String toString(){
+        return getEntityName() + " detects you from " + intDetectionRange + " walking " + intWalkSpeed + " m/s, what do you do? ";
+    }
+
 }
