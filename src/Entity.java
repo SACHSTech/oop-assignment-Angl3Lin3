@@ -14,6 +14,10 @@ public class Entity {
         return strName;
     }
 
+    public int getWalkSpeed(){
+        return intWalkSpeed;
+    }
+
 
 
 }
