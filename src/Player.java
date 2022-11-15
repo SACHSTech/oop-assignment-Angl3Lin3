@@ -1,8 +1,8 @@
 public class Player {
     
-    int intPlayerHealth = 20;
-    String strPlayerName;
-    boolean isPlayerDead = false;
+    private int intPlayerHealth = 20;
+    private String strPlayerName;
+    private boolean isPlayerDead = false;
 
     public int getPlayerHealth(){
         return intPlayerHealth;

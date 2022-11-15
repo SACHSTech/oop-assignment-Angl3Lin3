@@ -6,7 +6,9 @@ public class Entity {
     private boolean isEntityDead = false;
     private String strNoise;
 
-    
+    public int getEntityHealth(){
+        return intHealth;
+    }
 
 
 
