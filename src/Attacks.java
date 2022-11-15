@@ -7,4 +7,8 @@ public class Attacks {
         return strAttackType;
     }
 
+    public int getAttackDamage(){
+        return intAttackDamage;
+    }
+
 }
