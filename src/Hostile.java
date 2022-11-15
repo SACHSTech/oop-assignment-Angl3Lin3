@@ -11,4 +11,8 @@ public class Hostile extends Entity{
         return getEntityName() + " detects you from " + intDetectionRange + " walking " + intWalkSpeed + " m/s, what do you do? ";
     }
 
+    public Hostile(String strName, String strNoise){
+       super(strName, strNoise);
+    }
+
 }
