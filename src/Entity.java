@@ -39,6 +39,8 @@ public class Entity {
         strNoise = entityNoise;
     }
 
-
+    public String toString(){
+        return "You have created " + strEntityName + " and makes the sound: " + strNoise;
+    }
 
 }
