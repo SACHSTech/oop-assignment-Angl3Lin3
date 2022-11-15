@@ -25,11 +25,19 @@ public class Main {
         System.out.println(start);
         addLine();
 
+        HashMap<String, String> entityInfo = new HashMap<String, String>();
+
         for(int i = 0; i < intEntityNum; i++){
             System.out.print("Enter entity name: ");
             String entityName = scan.next();
             System.out.print("Enter entity noise: ");
             String entityNoise = scan.next();
+            addLine();
+
+            Entity create = new Entity(entityName, entityNoise);
+            System.out.println(create);
+            entityInfo.put(entityName, entityNoise);
+            addLine();
         }
 
         HashMap<String, Boolean> itemInfo = new HashMap<String, Boolean>();
