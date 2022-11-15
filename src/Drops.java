@@ -8,4 +8,8 @@ public class Drops {
         return strDropName;
     }
 
+    public String getDropType(){
+        return strDropType;
+    }
+
 }
