@@ -18,6 +18,10 @@ public class Entity {
         return intWalkSpeed;
     }
 
+    public boolean getDead(){
+        return isEntityDead;
+    }
+
 
 
 }
