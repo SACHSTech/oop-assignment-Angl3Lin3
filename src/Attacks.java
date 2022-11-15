@@ -1,6 +1,6 @@
 public class Attacks {
     
-    private String strAttackType;
+    private String strAttackType = "stabs";
     private int intAttackDamage = 5;
 
     public String getAttackType(){
@@ -9,6 +9,10 @@ public class Attacks {
 
     public int getAttackDamage(){
         return intAttackDamage;
+    }
+
+    public String toString(){
+        return strAttackType + " for " + intAttackDamage;
     }
 
 }
