@@ -55,6 +55,9 @@ public class Main {
             addLine();
         }
 
+        System.out.print("Of the " + intEntityNum + " how many of them do you want to be hostile?: ");
+        int intHostileNum = scan.nextInt();
+
         for(int i = 0; i < intEntityNum; i++){
 
         }
