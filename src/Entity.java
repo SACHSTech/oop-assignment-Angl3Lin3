@@ -1,17 +1,17 @@
 public class Entity {
     
-    private int intHealth = 20;
-    private String strName;
+    private int intEntityHealth = 20;
+    private String strEntityName;
     private int intWalkSpeed;
     private boolean isEntityDead = false;
     private String strNoise;
 
     public int getEntityHealth(){
-        return intHealth;
+        return intEntityHealth;
     }
 
     public String getEntityName(){
-        return strName;
+        return strEntityName;
     }
 
     public int getWalkSpeed(){
@@ -24,6 +24,10 @@ public class Entity {
 
     public String getNoise(){
         return strNoise;
+    }
+
+    public void setEntityHealth(int damage){
+        intEntityHealth = intEntityHealth - damage;
     }
 
 
