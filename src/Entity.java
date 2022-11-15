@@ -34,6 +34,11 @@ public class Entity {
         isEntityDead = true;
     }
 
+    public Entity(String entityName, String entityNoise){
+        strEntityName = entityName;
+        strNoise = entityNoise;
+    }
+
 
 
 }
