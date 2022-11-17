@@ -11,4 +11,8 @@ public class Blocks {
         return strColour;
     }
 
+    public String toString(){
+        return "You placed a block";
+    }
+
 }
