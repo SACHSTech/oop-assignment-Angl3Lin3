@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         
         addLine();
 
@@ -61,13 +61,25 @@ public class Main {
 
         System.out.print("Of the " + intEntityNum + " how many of them do you want to be hostile?: ");
         int intHostileNum = scan.nextInt();
+        addLine();
 
         for(int i = 0; i < intHostileNum; i++){
             System.out.print("Which one do you want to fight? (Enter a number corresponding to the order you made them): ");
             int intHostileOrder = scan.nextInt();
-
+            addLine();
+            
             Hostile attacks = new Hostile(entityInfoName.get(intHostileOrder - 1), entityInfoNoise.get(intHostileOrder - 1));
             System.out.println(attacks);
+            addLine();
+            Thread.sleep(3000);
+            System.out.println("Too late... you are fighting now!");
+            addLine();
+
+            System.out.println("---------------------------------------------------------------------------------------");
+            addLine();
+            System.out.print("What do you choose to use? Weapon, blocks, or food?: ");
+            String decision = scan.nextLine();
+
         }
 
         scan.close();
