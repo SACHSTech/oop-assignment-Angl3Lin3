@@ -7,4 +7,8 @@ public class Weapons {
         return strWeaponType;
     }
 
+    public int getWeaponDamage(){
+        return intWeaponDamage;
+    }
+
 }
