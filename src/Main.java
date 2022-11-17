@@ -117,7 +117,7 @@ public class Main {
                     System.out.println(newBlock);
                     System.out.println("Congradualations you wasted your time!");
                 } else if (decision.equals("food")){
-
+                    System.out.print("");
                 } else {
                     System.out.println("Congradualations you have messed up your turn!");
                 }
