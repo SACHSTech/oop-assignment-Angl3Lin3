@@ -67,7 +67,7 @@ public class Main {
             System.out.print("Which one do you want to fight? (Enter a number corresponding to the order you made them): ");
             int intHostileOrder = scan.nextInt();
             addLine();
-            
+
             Hostile attacks = new Hostile(entityInfoName.get(intHostileOrder - 1), entityInfoNoise.get(intHostileOrder - 1));
             System.out.println(attacks);
             addLine();
@@ -77,9 +77,45 @@ public class Main {
 
             System.out.println("---------------------------------------------------------------------------------------");
             addLine();
-            System.out.print("What do you choose to use? Weapon, blocks, or food?: ");
-            String decision = scan.nextLine();
 
+            for(int j = 0; j < intItemNum; j++){
+                System.out.print("Which item do you choose to use? (Enter a number corresponding to the order you made them): ");
+                int intItemOrder = scan.nextInt();
+                addLine();
+                System.out.print("What do you choose to use? weapon, block, or food? (lowercase): ");
+                String decision = scan.next();
+                addLine();
+                if (decision.equals("weapon")){
+                    System.out.print("What type of weapon is it?: ");
+                    String weaponType = scan.next();
+                    addLine();
+                    System.out.print("How much damage does it do?: ");
+                    int weaponDamage = scan.nextInt();
+                    addLine();
+                    Weapons newWeapon = new Weapons(itemInfoName.get(intItemOrder - 1), itemInfoUse.get(intItemOrder - 1), weaponType, weaponDamage);
+                    if(newWeapon.getUse() == true){
+                        System.out.print("Hit the hostile entity, yes or no?: ");
+                        String choice = scan.next();
+                        addLine();
+                            if(choice.equals("yes")){
+                                Entity.setEntityHealth(weaponDamage);
+                                System.out.println("The entity is now " + Entity.getEntityHealth() + " HP.");
+                            }else{
+                                System.out.println("Okay???");
+                            }
+                    } else {
+                        System.out.println("Why would you make something that you don't use?");
+                    }
+                } else if (decision.equals("block")){
+
+                } else if (decision.equals("food")){
+
+                } else {
+                    //System.out.println("Congradualations you have messed up your turn!");
+                }
+            }
+
+            
         }
 
         scan.close();
