@@ -74,10 +74,10 @@ public class Main {
             Thread.sleep(3000);
             System.out.println("Too late... you are fighting now!");
             addLine();
-
+            Thread.sleep(2000);
             System.out.println("---------------------------------------------------------------------------------------");
             addLine();
-
+            Thread.sleep(2000);
             for (int j = 0; j < intItemNum; j++){
                 System.out.print("Which item do you choose to use? (Enter a number corresponding to the order you made them): ");
                 int intItemOrder = scan.nextInt();
@@ -123,6 +123,7 @@ public class Main {
                     System.out.print("How much does this food heal you for?: ");
                     int foodHeal = scan.nextInt();
                     Food newFood = new Food(itemInfoName.get(intItemOrder - 1), itemInfoUse.get(intItemOrder - 1), foodHeal, foodNum);
+                    addLine();
                     if (newFood.getUse() == true){
                         System.out.print("Eat the food to heal? yes or no?: ");
                         String choice = scan.next();
