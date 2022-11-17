@@ -8,8 +8,12 @@ public class Player {
         return intPlayerHealth;
     }
 
-    public void setPlayerHealth(int damage){
+    public void setPlayerDamage(int damage){
         intPlayerHealth = intPlayerHealth - damage;
+    }
+
+    public void setPlayerHealth(int health){
+        intPlayerHealth = intPlayerHealth + health;
     }
 
     public String getPlayerName(){
