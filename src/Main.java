@@ -114,12 +114,12 @@ public class Main {
                     String colour = scan.next();
                     addLine();
                     Blocks newBlock = new Blocks(itemInfoName.get(intItemOrder - 1), itemInfoUse.get(intItemOrder - 1), blockNum, colour);
-                    
-
+                    System.out.println(newBlock);
+                    System.out.println("Congradualations you wasted your time!");
                 } else if (decision.equals("food")){
 
                 } else {
-                    //System.out.println("Congradualations you have messed up your turn!");
+                    System.out.println("Congradualations you have messed up your turn!");
                 }
             }
 
