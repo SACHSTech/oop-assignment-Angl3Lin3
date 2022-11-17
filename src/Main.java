@@ -107,6 +107,14 @@ public class Main {
                         System.out.println("Why would you make something that you don't use?");
                     }
                 } else if (decision.equals("block")){
+                    System.out.print("How many blocks do you want?: ");
+                    int blockNum = scan.nextInt();
+                    addLine();
+                    System.out.print("What colour is it?: ");
+                    String colour = scan.next();
+                    addLine();
+                    Blocks newBlock = new Blocks(itemInfoName.get(intItemOrder - 1), itemInfoUse.get(intItemOrder - 1), blockNum, colour);
+                    
 
                 } else if (decision.equals("food")){
 
