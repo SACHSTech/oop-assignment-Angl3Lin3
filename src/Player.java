@@ -17,7 +17,7 @@ public class Player {
     }
 
     public void setPlayerDead(){
-        isPlayerDead = true;
+        isPlayerDead = true;s
     }
 
     public boolean getPlayerDead(){
