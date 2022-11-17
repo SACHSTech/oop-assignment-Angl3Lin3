@@ -11,4 +11,8 @@ public class Food {
         return intFoodNum;
     }
 
+    public String toString(){
+        return "You ate something.";
+    }
+
 }
