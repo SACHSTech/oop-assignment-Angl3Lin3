@@ -1,4 +1,4 @@
-public class Food {
+public class Food extends Items{
     
     private int intHeal;
     private int intFoodNum;
@@ -13,6 +13,12 @@ public class Food {
 
     public String toString(){
         return "You ate something.";
+    }
+
+    public Food(String itemName, boolean use, int heal, int foodNum){
+        super(itemName, use);
+        intHeal = heal;
+        intFoodNum = foodNum;
     }
 
 }
