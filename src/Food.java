@@ -7,4 +7,8 @@ public class Food {
         return intHeal;
     }
 
+    public int getFoodNum(){
+        return intFoodNum;
+    }
+
 }
