@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,7 +25,8 @@ public class Main {
         System.out.println(start);
         addLine();
 
-        HashMap<String, String> entityInfo = new HashMap<String, String>();
+        ArrayList<String> entityInfoName = new ArrayList<String>();
+        ArrayList<String> entityInfoNoise = new ArrayList<String>();
 
         for(int i = 0; i < intEntityNum; i++){
             System.out.print("Enter entity name: ");
@@ -36,11 +37,13 @@ public class Main {
 
             Entity create = new Entity(entityName, entityNoise);
             System.out.println(create);
-            entityInfo.put(entityName, entityNoise);
+            entityInfoName.add(entityName);
+            entityInfoNoise.add(entityNoise);
             addLine();
         }
 
-        HashMap<String, Boolean> itemInfo = new HashMap<String, Boolean>();
+        ArrayList<String> itemInfoName = new ArrayList<String>();
+        ArrayList<Boolean> itemInfoUse = new ArrayList<Boolean>();
 
         for(int i = 0; i < intItemNum; i++){
             System.out.print("Enter item name: ");
@@ -51,15 +54,20 @@ public class Main {
 
             Items create = new Items(itemName, itemUse);
             System.out.println(create);
-            itemInfo.put(itemName, itemUse);
+            itemInfoName.add(itemName);
+            itemInfoUse.add(itemUse);
             addLine();
         }
 
         System.out.print("Of the " + intEntityNum + " how many of them do you want to be hostile?: ");
         int intHostileNum = scan.nextInt();
 
-        for(int i = 0; i < intEntityNum; i++){
+        for(int i = 0; i < intHostileNum; i++){
+            System.out.print("Which one do you want to fight? (Enter a number corresponding to the order you made them): ");
+            int intHostileOrder = scan.nextInt();
 
+            Hostile attacks = new Hostile(entityInfoName.get(intHostileOrder - 1), entityInfoNoise.get(intHostileOrder - 1));
+            System.out.println(attacks);
         }
 
         scan.close();
