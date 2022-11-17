@@ -11,4 +11,8 @@ public class Weapons {
         return intWeaponDamage;
     }
 
+    public String toString(){
+        return "You hit someone.";
+    }
+
 }
