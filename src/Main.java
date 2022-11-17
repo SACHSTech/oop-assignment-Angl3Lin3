@@ -78,7 +78,7 @@ public class Main {
             System.out.println("---------------------------------------------------------------------------------------");
             addLine();
 
-            for(int j = 0; j < intItemNum; j++){
+            for (int j = 0; j < intItemNum; j++){
                 System.out.print("Which item do you choose to use? (Enter a number corresponding to the order you made them): ");
                 int intItemOrder = scan.nextInt();
                 addLine();
@@ -93,7 +93,7 @@ public class Main {
                     int weaponDamage = scan.nextInt();
                     addLine();
                     Weapons newWeapon = new Weapons(itemInfoName.get(intItemOrder - 1), itemInfoUse.get(intItemOrder - 1), weaponType, weaponDamage);
-                    if(newWeapon.getUse() == true){
+                    if (newWeapon.getUse() == true){
                         System.out.print("Hit the hostile entity, yes or no?: ");
                         String choice = scan.next();
                         addLine();
@@ -117,7 +117,25 @@ public class Main {
                     System.out.println(newBlock);
                     System.out.println("Congradualations you wasted your time!");
                 } else if (decision.equals("food")){
-                    System.out.print("");
+                    System.out.print("How much food do you want?: ");
+                    int foodNum = scan.nextInt();
+                    addLine();
+                    System.out.print("How much does this food heal you for?: ");
+                    int foodHeal = scan.nextInt();
+                    Food newFood = new Food(itemInfoName.get(intItemOrder - 1), itemInfoUse.get(intItemOrder - 1), foodHeal, foodNum);
+                    if (newFood.getUse() == true){
+                        System.out.print("Eat the food to heal? yes or no?: ");
+                        String choice = scan.next();
+                        addLine();
+                        if (choice.equals("yes")){
+                            mainPlayer.setPlayerHealth(foodHeal);
+                            System.out.println("Your health is now: " + mainPlayer.getPlayerHealth() + "HP.");
+                        } else {
+                            System.out.println("Why???");
+                        }
+                    } else {
+                        System.out.println("Why would you make something that you don't use?");
+                    }
                 } else {
                     System.out.println("Congradualations you have messed up your turn!");
                 }
