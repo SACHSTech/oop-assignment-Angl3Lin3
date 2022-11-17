@@ -7,4 +7,8 @@ public class Blocks {
         return intBlockNum;
     }
 
+    public String getColour(){
+        return strColour;
+    }
+
 }
