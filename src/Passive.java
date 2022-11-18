@@ -2,6 +2,10 @@ public class Passive extends Entity{
     
     private boolean isAttacked = false;
 
+    public void setAttacked(){
+        isAttacked = true;
+    }
+
     public boolean getAttacked(){
         return isAttacked;
     }
