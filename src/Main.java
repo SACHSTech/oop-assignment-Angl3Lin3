@@ -62,7 +62,7 @@ public class Main {
         System.out.print("Of the " + intEntityNum + " how many of them do you want to be hostile?: ");
         int intHostileNum = scan.nextInt();
         addLine();
-
+        while(mainPlayer.getPlayerHealth() > 1 && Entity.getEntityHealth() > 1){
         for(int i = 0; i < intHostileNum; i++){
             System.out.print("Which one do you want to fight? (Enter a number corresponding to the order you made them): ");
             int intHostileOrder = scan.nextInt();
@@ -144,9 +144,27 @@ public class Main {
                 Attacks newAttack = new Attacks();
                 System.out.println(newAttack);
                 mainPlayer.setPlayerDamage(newAttack.getAttackDamage());
+                addLine();
+                if (mainPlayer.getPlayerHealth() < 1){
+                    mainPlayer.setPlayerDead();
+                }
             }
+        }
+        addLine();
+        }   
+        if (mainPlayer.getPlayerDead() == true){
+            System.out.println("Congradulations! You did not die!");
+            Thread.sleep(2000);
+            System.out.println("Heres your gift for you!");
+            Thread.sleep(2000);
+            System.out.print("Of the " + intEntityNum + " how many of them do you want to be passive?: ");
+            int intPassive = scan.nextInt();
+            addLine();
+            for (int i = 0; i < intPassive; i++){
 
-            
+            }
+        } else if (mainPlayer.getPlayerDead() == false){
+            System.out.println("Wow you died. :(, goodbye!");
         }
 
         scan.close();
