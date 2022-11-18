@@ -161,7 +161,15 @@ public class Main {
             int intPassive = scan.nextInt();
             addLine();
             for (int i = 0; i < intPassive; i++){
-
+                System.out.print("Which passive do you choose to use? (Enter a number corresponding to the order you made them): ");
+                int intPassiveOrder = scan.nextInt();
+                Passive newPassive = new Passive(entityInfoName.get(intPassiveOrder - 1), entityInfoNoise.get(intPassiveOrder - 1));
+                addLine();
+                System.out.println("Now you will have to attack them!");
+                addLine();
+                System.out.println(newPassive);
+                newPassive.setAttacked();
+                addLine();
             }
         } else if (mainPlayer.getPlayerDead() == false){
             System.out.println("Wow you died. :(, goodbye!");
