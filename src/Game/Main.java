@@ -127,6 +127,7 @@ public class Main {
                             //if user attacks, follow this
                             if(choice.equals("yes")){
                                 Entity.setEntityHealth(weaponDamage);
+                                System.out.println(newWeapon);
                                 System.out.println("The entity is now " + Entity.getEntityHealth() + " HP.");
                                 //if entity health is less than 1, break the loops
                                 if (Entity.getEntityHealth() < 1){
