@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         
         addLine();
+        boolean attacks = false;
 
         Scanner scan = new Scanner(System.in);
 
@@ -152,6 +153,7 @@ public class Main {
         }
         addLine();
         }   
+
         if (mainPlayer.getPlayerDead() == true){
             System.out.println("Congradulations! You did not die!");
             Thread.sleep(2000);
@@ -170,9 +172,19 @@ public class Main {
                 System.out.println(newPassive);
                 newPassive.setAttacked();
                 addLine();
+                if (newPassive.getAttacked() == true){
+                    attacks = true;
+                } else {
+                    attacks = false;
+                }
             }
         } else if (mainPlayer.getPlayerDead() == false){
-            System.out.println("Wow you died. :(, goodbye!");
+            System.out.println("Wow you died. :(");
+        }
+        if (attacks == true){
+            System.out.println("You won but at what cost.");
+        } else if (attacks == false){
+            System.out.println("You lost.");
         }
 
         scan.close();
