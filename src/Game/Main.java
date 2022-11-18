@@ -10,7 +10,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
+    public static void start(String[] args) throws InterruptedException {
         
         addLine();
         //Initialize
