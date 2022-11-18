@@ -41,6 +41,19 @@ public class Drops {
     }
 
     /**
+     * Constructor - creates a new instance of Drops object
+     * 
+     * @param name - name of drop
+     * @param type - type of drop
+     * @param num - amount of drops
+     */
+    public Drops(String name, String type, int num){
+        strDropName = name;
+        strDropType = type;
+        intDropNum = num;
+    }
+
+    /**
      * returns the text of a Drop object
      * 
      * @return text that represents the drop that the user created
