@@ -228,6 +228,15 @@ public class Main {
                 //if passive did get attacked, do this
                 if (newPassive.getAttacked() == true){
                     blattacks = true;
+                    System.out.print("What did the passive entity drop?: ");
+                    String dropName = scan.next();
+                    System.out.print("What type of drop is it?: ");
+                    String dropType = scan.next();
+                    System.out.print("How many of this drop did the passive drop?: ");
+                    int dropNum = scan.nextInt();
+                    Drops newDrop = new Drops(dropName, dropType, dropNum);
+                    System.out.println(newDrop);
+                    addLine();
                 //if passive did not get attacked, do this
                 } else {
                     blattacks = false;
