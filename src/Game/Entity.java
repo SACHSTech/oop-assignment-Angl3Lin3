@@ -27,6 +27,10 @@ public class Entity {
         return strNoise;
     }
 
+    public void setEntityHP(){
+        intEntityHealth = 20;
+    }
+
     public static void setEntityHealth(int damage){
         intEntityHealth = intEntityHealth - damage;
     }

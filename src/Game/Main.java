@@ -64,7 +64,7 @@ public class Main {
         System.out.print("Of the " + intEntityNum + " how many of them do you want to be hostile?: ");
         int intHostileNum = scan.nextInt();
         addLine();
-        while(mainPlayer.getPlayerHealth() > 1 && Entity.getEntityHealth() > 1){
+        //while(mainPlayer.getPlayerHealth() > 1){
             for (int i = 0; i < intHostileNum; i++){
                 if (mainPlayer.getPlayerHealth() < 1){
                     mainPlayer.setPlayerDead();
@@ -83,6 +83,8 @@ public class Main {
                 System.out.println("---------------------------------------------------------------------------------------");
                 addLine();
                 Thread.sleep(2000);
+                System.out.println(Entity.getEntityName());
+                System.out.println(Entity.getEntityHealth());
                 while(mainPlayer.getPlayerHealth() > 1 && Entity.getEntityHealth() > 1){
                     System.out.print("Which item do you choose to use? (Enter a number corresponding to the order you made them): ");
                     int intItemOrder = scan.nextInt();
@@ -105,6 +107,10 @@ public class Main {
                                 if(choice.equals("yes")){
                                     Entity.setEntityHealth(weaponDamage);
                                     System.out.println("The entity is now " + Entity.getEntityHealth() + " HP.");
+                                    if (Entity.getEntityHealth() < 1){
+                                        break;
+                                    }
+                                    addLine();
                                 }else{
                                     System.out.println("Okay???");
                                 }
@@ -152,11 +158,12 @@ public class Main {
                     addLine();
                     if (mainPlayer.getPlayerHealth() < 1){
                         mainPlayer.setPlayerDead();
+                        break;
                     }     
                 }
             }
         addLine();
-        }
+        //}
 
         if (mainPlayer.getPlayerHealth() < 1){
             mainPlayer.setPlayerDead();
