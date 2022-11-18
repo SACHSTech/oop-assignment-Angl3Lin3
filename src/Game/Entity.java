@@ -27,7 +27,7 @@ public class Entity {
         return strNoise;
     }
 
-    public void setEntityHP(){
+    public static void setEntityHP(){
         intEntityHealth = 20;
     }
 
