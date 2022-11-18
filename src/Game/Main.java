@@ -1,3 +1,4 @@
+package Game;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -166,6 +167,7 @@ public class Main {
             Thread.sleep(2000);
             System.out.println("Heres your gift for you!");
             Thread.sleep(2000);
+            addLine();
             System.out.print("Of the " + intEntityNum + " how many of them do you want to be passive?: ");
             int intPassive = scan.nextInt();
             addLine();
