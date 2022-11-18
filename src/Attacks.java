@@ -12,7 +12,7 @@ public class Attacks {
     }
 
     public String toString(){
-        return strAttackType + " for " + intAttackDamage;
+        return Entity.getEntityName() + " attacks you by " + strAttackType + " for " + intAttackDamage;
     }
 
     public Attacks(){

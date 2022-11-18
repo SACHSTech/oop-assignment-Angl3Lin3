@@ -1,7 +1,7 @@
 public class Entity {
     
     private static int intEntityHealth = 20;
-    private String strEntityName;
+    private static String strEntityName;
     private int intWalkSpeed;
     private boolean isEntityDead = false;
     private String strNoise;
@@ -10,7 +10,7 @@ public class Entity {
         return intEntityHealth;
     }
 
-    public String getEntityName(){
+    public static String getEntityName(){
         return strEntityName;
     }
 

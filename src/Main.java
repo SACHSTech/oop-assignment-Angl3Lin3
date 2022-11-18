@@ -140,6 +140,10 @@ public class Main {
                 } else {
                     System.out.println("Congradualations you have messed up your turn!");
                 }
+                addLine();
+                Attacks newAttack = new Attacks();
+                System.out.println(newAttack);
+                mainPlayer.setPlayerDamage(newAttack.getAttackDamage());
             }
 
             
