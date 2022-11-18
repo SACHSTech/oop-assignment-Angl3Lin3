@@ -64,106 +64,105 @@ public class Main {
         System.out.print("Of the " + intEntityNum + " how many of them do you want to be hostile?: ");
         int intHostileNum = scan.nextInt();
         addLine();
-        //while(mainPlayer.getPlayerHealth() > 1){
-            for (int i = 0; i < intHostileNum; i++){
-                if (mainPlayer.getPlayerHealth() < 1){
-                    mainPlayer.setPlayerDead();
-                }
-                System.out.print("Which one do you want to fight? (Enter a number corresponding to the order you made them): ");
-                int intHostileOrder = scan.nextInt();
-                addLine();
 
-                Hostile attacks = new Hostile(entityInfoName.get(intHostileOrder - 1), entityInfoNoise.get(intHostileOrder - 1));
-                System.out.println(attacks);
+        for (int i = 0; i < intHostileNum; i++){
+            if (mainPlayer.getPlayerHealth() < 1){
+                mainPlayer.setPlayerDead();
+            }
+            System.out.print("Which one do you want to fight? (Enter a number corresponding to the order you made them): ");
+            int intHostileOrder = scan.nextInt();
+            addLine();
+
+            Hostile attacks = new Hostile(entityInfoName.get(intHostileOrder - 1), entityInfoNoise.get(intHostileOrder - 1));
+            System.out.println(attacks);
+            addLine();
+            Thread.sleep(2000);
+            System.out.println("Too late... you are fighting now!");
+            addLine();
+            Thread.sleep(2000);
+            System.out.println("---------------------------------------------------------------------------------------");
+            addLine();
+            Thread.sleep(2000);
+            Entity.setEntityHP();
+            while(mainPlayer.getPlayerHealth() > 1 && Entity.getEntityHealth() > 1){
+                System.out.print("Which item do you choose to use? (Enter a number corresponding to the order you made them): ");
+                int intItemOrder = scan.nextInt();
                 addLine();
-                Thread.sleep(2000);
-                System.out.println("Too late... you are fighting now!");
+                System.out.print("What do you choose to use? weapon, block, or food? (lowercase): ");
+                String decision = scan.next();
                 addLine();
-                Thread.sleep(2000);
-                System.out.println("---------------------------------------------------------------------------------------");
-                addLine();
-                Thread.sleep(2000);
-                System.out.println(Entity.getEntityName());
-                System.out.println(Entity.getEntityHealth());
-                while(mainPlayer.getPlayerHealth() > 1 && Entity.getEntityHealth() > 1){
-                    System.out.print("Which item do you choose to use? (Enter a number corresponding to the order you made them): ");
-                    int intItemOrder = scan.nextInt();
+                if (decision.equals("weapon")){
+                    System.out.print("What type of weapon is it?: ");
+                    String weaponType = scan.next();
                     addLine();
-                    System.out.print("What do you choose to use? weapon, block, or food? (lowercase): ");
-                    String decision = scan.next();
+                    System.out.print("How much damage does it do?: ");
+                    int weaponDamage = scan.nextInt();
                     addLine();
-                    if (decision.equals("weapon")){
-                        System.out.print("What type of weapon is it?: ");
-                        String weaponType = scan.next();
+                    Weapons newWeapon = new Weapons(itemInfoName.get(intItemOrder - 1), itemInfoUse.get(intItemOrder - 1), weaponType, weaponDamage);
+                    if (newWeapon.getUse() == true){
+                        System.out.print("Hit the hostile entity, yes or no?: ");
+                        String choice = scan.next();
                         addLine();
-                        System.out.print("How much damage does it do?: ");
-                        int weaponDamage = scan.nextInt();
-                        addLine();
-                        Weapons newWeapon = new Weapons(itemInfoName.get(intItemOrder - 1), itemInfoUse.get(intItemOrder - 1), weaponType, weaponDamage);
-                        if (newWeapon.getUse() == true){
-                            System.out.print("Hit the hostile entity, yes or no?: ");
-                            String choice = scan.next();
-                            addLine();
-                                if(choice.equals("yes")){
-                                    Entity.setEntityHealth(weaponDamage);
-                                    System.out.println("The entity is now " + Entity.getEntityHealth() + " HP.");
-                                    if (Entity.getEntityHealth() < 1){
-                                        break;
-                                    }
-                                    addLine();
-                                }else{
-                                    System.out.println("Okay???");
+                            if(choice.equals("yes")){
+                                Entity.setEntityHealth(weaponDamage);
+                                System.out.println("The entity is now " + Entity.getEntityHealth() + " HP.");
+                                if (Entity.getEntityHealth() < 1){
+                                    break;
                                 }
-                        } else {
-                            System.out.println("Why would you make something that you don't use?");
-                        }
-                    } else if (decision.equals("block")){
-                        System.out.print("How many blocks do you want?: ");
-                        int blockNum = scan.nextInt();
-                        addLine();
-                        System.out.print("What colour is it?: ");
-                        String colour = scan.next();
-                        addLine();
-                        Blocks newBlock = new Blocks(itemInfoName.get(intItemOrder - 1), itemInfoUse.get(intItemOrder - 1), blockNum, colour);
-                        System.out.println(newBlock);
-                        System.out.println("Congradualations you wasted your time!");
-                    } else if (decision.equals("food")){
-                        System.out.print("How much food do you want?: ");
-                        int foodNum = scan.nextInt();
-                        addLine();
-                        System.out.print("How much does this food heal you for?: ");
-                        int foodHeal = scan.nextInt();
-                        Food newFood = new Food(itemInfoName.get(intItemOrder - 1), itemInfoUse.get(intItemOrder - 1), foodHeal, foodNum);
-                        addLine();
-                        if (newFood.getUse() == true){
-                            System.out.print("Eat the food to heal? yes or no?: ");
-                            String choice = scan.next();
-                            addLine();
-                            if (choice.equals("yes")){
-                                mainPlayer.setPlayerHealth(foodHeal);
-                                System.out.println("Your health is now: " + mainPlayer.getPlayerHealth() + "HP.");
-                            } else {
-                                System.out.println("Why???");
+                                addLine();
+                            }else{
+                                System.out.println("Okay???");
                             }
+                    } else {
+                        System.out.println("Why would you make something that you don't use?");
+                    }
+                } else if (decision.equals("block")){
+                    System.out.print("How many blocks do you want?: ");
+                    int blockNum = scan.nextInt();
+                    addLine();
+                    System.out.print("What colour is it?: ");
+                    String colour = scan.next();
+                    addLine();
+                    Blocks newBlock = new Blocks(itemInfoName.get(intItemOrder - 1), itemInfoUse.get(intItemOrder - 1), blockNum, colour);
+                    System.out.println(newBlock);
+                    System.out.println("Congradualations you wasted your time!");
+                } else if (decision.equals("food")){
+                    System.out.print("How much food do you want?: ");
+                    int foodNum = scan.nextInt();
+                    addLine();
+                    System.out.print("How much does this food heal you for?: ");
+                    int foodHeal = scan.nextInt();
+                    Food newFood = new Food(itemInfoName.get(intItemOrder - 1), itemInfoUse.get(intItemOrder - 1), foodHeal, foodNum);
+                    addLine();
+                    if (newFood.getUse() == true){
+                        System.out.print("Eat the food to heal? yes or no?: ");
+                        String choice = scan.next();
+                        addLine();
+                        if (choice.equals("yes")){
+                            mainPlayer.setPlayerHealth(foodHeal);
+                            System.out.println("Your health is now: " + mainPlayer.getPlayerHealth() + "HP.");
                         } else {
-                            System.out.println("Why would you make something that you don't use?");
+                            System.out.println("Why???");
                         }
                     } else {
-                        System.out.println("Congradualations you have messed up your turn!");
+                        System.out.println("Why would you make something that you don't use?");
                     }
-                    addLine();
-                    Attacks newAttack = new Attacks();
-                    System.out.println(newAttack);
-                    mainPlayer.setPlayerDamage(newAttack.getAttackDamage());
-                    addLine();
-                    if (mainPlayer.getPlayerHealth() < 1){
-                        mainPlayer.setPlayerDead();
-                        break;
-                    }     
+                } else {
+                    System.out.println("Congradualations you have messed up your turn!");
                 }
+                addLine();
+                Attacks newAttack = new Attacks();
+                System.out.println(newAttack);
+                mainPlayer.setPlayerDamage(newAttack.getAttackDamage());
+                addLine();
+                if (mainPlayer.getPlayerHealth() < 1){
+                    mainPlayer.setPlayerDead();
+                    break;
+                }     
             }
+        }
         addLine();
-        //}
+
 
         if (mainPlayer.getPlayerHealth() < 1){
             mainPlayer.setPlayerDead();
