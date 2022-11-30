@@ -1,7 +1,7 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=9234636&assignment_repo_type=AssignmentRepo)
 # ICS4U OOP Assignment
 
-<img src="src/Game/Oop Assignment Diagram.drawio.png">
+<img src="src/Oop Diagram.drawio.png">
 
 ## Summary
 #### This game is loosely based on minecraft with the names of entities and items. Everything is a part of the World class. Entities, items, and the player are all things that a world has. Each entity is either hostile or passive. A hostile entity has attacks while a passive entity has drops. Then, there are weapon, food, and blocks that are items.
